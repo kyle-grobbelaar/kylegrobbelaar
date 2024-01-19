@@ -8,8 +8,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@EntityScan
-@EnableTransactionManagement
+//@EntityScan
+@EnableJpaRepositories
+//@EnableTransactionManagement
 public class InvestorApplication {
 
 	public static void main(String[] args) {
