@@ -1,4 +1,4 @@
-package com.enviro.assessment.grad001.kylegrobbelaar.Services;
+package com.enviro.assessment.grad001.kylegrobbelaar.Common;
 
 import javax.persistence.*;
 
@@ -17,6 +17,15 @@ public class Product {
     private Long age;
     private String email;
     private String address;
+
+    public Product ( ProductType type, String name, Long currBalance, Long age, String email, String address) {
+        this.type = type;
+        this.name = name;
+        this.age = age;
+        this.currentBalance = currBalance;
+        this.email = email;
+        this.address = address;
+    }
 
     public ProductType getType() {
         return type;
