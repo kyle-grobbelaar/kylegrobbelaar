@@ -4,20 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d612fa21-a1b9-47b6-b819-6a3e68a9b729" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/TestProduct.java" afterDir="false" />
+    <list default="true" id="6aa9b4b3-48b5-4502-9b86-43aa3a368a3f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Entities/TestEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/JpaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Controllers/RoutesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Controllers/RoutesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/ProductType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/TestProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Controllers/RoutesController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/InvestorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/InvestorApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/Interfaces/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/Interfaces/PersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/Interfaces/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/Interfaces/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/Interfaces/ProductDAOImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/Interfaces/PersonDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/Interfaces/ProductDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Services/UserService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/enviro/assessment/grad001/kylegrobbelaar/KylegrobbelaarApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/enviro/assessment/grad001/kylegrobbelaar/InvestorApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,26 +57,20 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2bAD3qm5WX2A1u6DUl9Xz989TNr" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2bAkqyPkN9yqqwRbkPowvoaaczn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Files/kylegrobbelaar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="InvestorApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.enviro.assessment.grad001.kylegrobbelaar.InvestorApplication" />
@@ -91,11 +94,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d612fa21-a1b9-47b6-b819-6a3e68a9b729" name="Changes" comment="" />
-      <created>1705648794243</created>
+      <changelist id="6aa9b4b3-48b5-4502-9b86-43aa3a368a3f" name="Changes" comment="" />
+      <created>1705665470213</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1705648794243</updated>
+      <updated>1705665470213</updated>
     </task>
     <servers />
   </component>
