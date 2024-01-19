@@ -5,28 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aa9b4b3-48b5-4502-9b86-43aa3a368a3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Entities/TestEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/JpaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Controller/RestApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/appConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/ProductType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Common/TestProduct.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Controllers/RoutesController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/InvestorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/InvestorApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/Interfaces/PersonDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/Interfaces/ProductDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Services/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/enviro/assessment/grad001/kylegrobbelaar/KylegrobbelaarApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/enviro/assessment/grad001/kylegrobbelaar/InvestorApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/JpaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/JpaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/Persistence/ProductDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +25,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -64,6 +52,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "project.structure.last.edited": "Project",
@@ -71,13 +60,18 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.enviro.assessment.grad001.kylegrobbelaar" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="InvestorApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.enviro.assessment.grad001.kylegrobbelaar.InvestorApplication" />
       <module name="kylegrobbelaar" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.enviro.assessment.grad001.kylegrobbelaar.*" />
+          <option name="PATTERN" value="com.enviro.assessment.grad001.kylegrobbelaar.Services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

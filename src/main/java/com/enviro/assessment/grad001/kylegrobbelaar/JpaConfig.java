@@ -11,15 +11,15 @@ import javax.sql.DataSource;
 
 
 @Configuration
-@EnableJpaRepositories
+@EnableJpaRepositories(basePackages = "com.enviro.assessment.grad001.kylegrobbelaar.Entities")
 public class JpaConfig {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+        em.setDataSource(dataSource);
         em.setPackagesToScan("com/enviro/assessment/grad001/kylegrobbelaar/Entities");
         em.setPersistenceProviderClass(org.hibernate.jpa.HibernatePersistenceProvider.class);
-        em.setDataSource(dataSource);
         return em;
     }
 

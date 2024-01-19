@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @EntityScan
-@EnableJpaRepositories
 @EnableTransactionManagement
 public class InvestorApplication {
 
