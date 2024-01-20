@@ -11,5 +11,6 @@ import java.util.List;
 public interface ProductDAO extends JpaRepository<Product, Long> {
 
     List<Product> findAllByEmail( String email );
+    List<Product> findAllByName( String name );
 
 }

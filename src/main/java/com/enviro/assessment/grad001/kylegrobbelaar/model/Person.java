@@ -14,6 +14,9 @@ public class Person {
     private String name;
     private String email;
     private String contact;
+    private String address;
+
+    private Long age;
 
     public Long getId() {
         return id;
@@ -46,4 +49,21 @@ public class Person {
     public void setContact(String contact) {
         this.contact = contact;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Long getAge() {
+        return age;
+    }
+
+    public void setAge(Long age) {
+        this.age = age;
+    }
+
 }
