@@ -1,4 +1,4 @@
-package com.enviro.assessment.grad001.kylegrobbelaar.Entities;
+package com.enviro.assessment.grad001.kylegrobbelaar.model;
 
 
 import jakarta.persistence.Entity;
