@@ -3,6 +3,7 @@ package com.enviro.assessment.grad001.kylegrobbelaar.service;
 import com.enviro.assessment.grad001.kylegrobbelaar.model.*;
 import com.enviro.assessment.grad001.kylegrobbelaar.persistence.PersonDAO;
 import com.enviro.assessment.grad001.kylegrobbelaar.persistence.ProductDAO;
+import com.enviro.assessment.grad001.kylegrobbelaar.persistence.WithdrawalNoticeDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,17 +15,22 @@ public class UserService {
 
     private final ProductDAO productDAO;
     private final PersonDAO personDAO;
+    private final WithdrawalNoticeDAO noticeDAO;
 
     @Autowired
-    public UserService (ProductDAO productDAO, PersonDAO personDAO) {
+    public UserService (ProductDAO productDAO, PersonDAO personDAO, WithdrawalNoticeDAO noticeDAO) {
         this.productDAO = productDAO;
         this.personDAO = personDAO;
+        this.noticeDAO = noticeDAO;
         mockDemoProductRepo();
         mockDemoPersonRepo();
     }
 
     public Product saveProductEntity( Product testEntity) {
         return productDAO.save( testEntity );
+    }
+    public void saveNotice( WithdrawalNotice notice ) {
+        noticeDAO.save( notice );
     }
 
     public List<Product> getAllProducts() {

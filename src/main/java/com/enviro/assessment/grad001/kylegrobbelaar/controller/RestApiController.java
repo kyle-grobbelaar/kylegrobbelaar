@@ -75,22 +75,24 @@ public class RestApiController {
         WithdrawalNotice notice = new WithdrawalNotice();
         Product p = userService.findEntityById( Long.valueOf( id ));
 
+        notice.setEmail(p.getEmail() );
+        notice.setProductId( p.getId() );
+        notice.setProductType( p.getType() );
+
         if (p.getType() == ProductType.RETIREMENT && !userService.isPersonRetired(p.getEmail())) {
             notice.setMessage( "You must be 65 years or older to withdraw from this product" );
-//            p.appendNotice( notice );
+            userService.saveNotice( notice );
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body( notice );
         }
         if (!userService.isValidWithdrawAmount( p, Long.valueOf( withdrawAmount ) )) {
             notice.setMessage( "Withdraw amount exceeds 90% of total current balance." );
-//            p.appendNotice( notice );
+            userService.saveNotice( notice );
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body( notice );
         }
         else{
-            // TODO: 20/01/2024 setup product name
             notice.setMessage( withdrawAmount + " successfully withdrawn from product." );
-//            p.appendNotice( notice );
             userService.doWithdrawAmount( p, Long.valueOf(withdrawAmount) );
-
+            userService.saveNotice( notice );
             return ResponseEntity.ok( notice );
         }
     }

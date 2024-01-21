@@ -41,4 +41,15 @@ class InvestorApplicationTests {
 
 	}
 
+	@Test
+	void cannotWithdrawFromRetirementAccount() throws Exception {
+		String formData = "withdrawAmount=100";
+
+		this.mockmvc.perform(post( "/withdraw/2" )
+						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
+						.content( formData ))
+				.andDo( print() )
+				.andExpect( status().isForbidden() );
+	}
+
 }
