@@ -25,6 +25,16 @@ class InvestorApplicationTests {
 	}
 
 	@Test
+	void canRetrieveSpecificProduct() throws Exception {
+		this.mockmvc.perform(get( "/investment/1" )).andExpect(status().isOk());
+	}
+
+	@Test
+	void cannotRetrieveNonExistentProduct() throws Exception {
+		this.mockmvc.perform(get( "/investment/10000" )).andExpect(status().isBadRequest());
+	}
+
+	@Test
 	void canPostWithdrawalRequest() throws Exception {
 		String formData = "withdrawAmount=100";
 
@@ -36,7 +46,6 @@ class InvestorApplicationTests {
 		this.mockmvc.perform(post( "/withdraw/1" )
 						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
 						.content( formData ))
-				.andDo(print())
 				.andExpect( status().isOk() );
 
 	}
@@ -48,8 +57,52 @@ class InvestorApplicationTests {
 		this.mockmvc.perform(post( "/withdraw/2" )
 						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
 						.content( formData ))
-				.andDo( print() )
 				.andExpect( status().isForbidden() );
 	}
 
+	@Test
+	void cannotWithdrawTooMuch() throws Exception {
+		String formData = "withdrawAmount=9999";
+
+		this.mockmvc.perform(post( "/withdraw/1" )
+						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
+						.content( formData ))
+				.andExpect( status().isForbidden() );
+	}
+
+	@Test
+	void getPersonExistsId() throws Exception {
+		this.mockmvc.perform(get( "/investor/id=1" ))
+				.andExpect( status().isOk() );
+	}
+
+	@Test
+	void getPersonExistsEmail() throws Exception {
+		this.mockmvc.perform(get( "/investor/email=kyle@mail.com" ))
+				.andExpect( status().isOk() );
+	}
+
+	@Test
+	void getPersonExistsName() throws Exception {
+		this.mockmvc.perform(get( "/investor/email=donny@mail.com" ))
+				.andExpect( status().isOk() );
+	}
+
+	@Test
+	void personDoesNotExistId() throws Exception {
+		this.mockmvc.perform(get( "/investor/id=1000" ))
+				.andExpect( status().isBadRequest() );
+	}
+
+	@Test
+	void personDoesNotExistEmail() throws Exception {
+		this.mockmvc.perform(get( "/investor/email=idontexist@mail.com" ))
+				.andExpect( status().isBadRequest() );
+	}
+
+	@Test
+	void personDoesNotExistname() throws Exception {
+		this.mockmvc.perform(get( "/investor/name=iamnotreal" ))
+				.andExpect( status().isBadRequest() );
+	}
 }

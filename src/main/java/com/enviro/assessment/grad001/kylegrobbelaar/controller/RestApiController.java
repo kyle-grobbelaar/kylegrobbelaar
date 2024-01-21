@@ -18,48 +18,81 @@ public class RestApiController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/login")
-    public ResponseEntity<Person> savePerson() {
-        Person person = new Person();
-        person.setName( "Kyle" );
-        person.setEmail( "grobb@gmail.com" );
-        System.out.println();
-        return ResponseEntity.ok(person);
-    }
-
+    /**
+     * Retireve all products/investments associated with the client
+     * @param name
+     * @return List<Product>
+     */
     @GetMapping("/{name}/investments")
     public ResponseEntity<List<Product>> getInvestmentsByName (@PathVariable String name ) {
         return ResponseEntity.ok(userService.getAllProductsByName( name ));
     }
 
+    /**
+     * Retrieve a specific product based on an id
+     * @param id
+     * @return Product/null
+     */
     @GetMapping("/investment/{id}")
     public ResponseEntity<Product> getProductById (@PathVariable String id) {
-        return ResponseEntity.ok(userService.findEntityById( Long.valueOf( id ) ));
+        Product product = userService.findEntityById( Long.valueOf( id ) );
+        if (product == null){
+            return ResponseEntity.status( HttpStatus.BAD_REQUEST ).body( product );
+        }
+        else{
+            return ResponseEntity.ok(userService.findEntityById( Long.valueOf( id ) ));
+        }
     }
 
+    /**
+     * Retrieves a list of all investors
+     * @return List
+     */
     @GetMapping("/investors")
     public ResponseEntity<List<Person>> getAllInvestors() {
         return ResponseEntity.ok(userService.findAllPersons());
     }
 
-    @GetMapping("investor/name={name}")
+    /**
+     * Retrieve investor information
+     * @param name
+     * @return Person
+     */
+    @GetMapping("/investor/name={name}")
     public ResponseEntity<Person> getPersonByName(@PathVariable String name) {
-        return ResponseEntity.ok(userService.findPersonByName( name ));
-    }
-
-    @GetMapping("investor/id={id}")
-    public ResponseEntity<Person> getPersonById(@PathVariable String id) {
-        Person p = userService.findPersonById( Long.valueOf( id ));
+        Person p = userService.findPersonByName( name );
         if (p == null) {
-            System.out.println("Not Such Person");
-            return ResponseEntity.ok( null );
+            return ResponseEntity.status( HttpStatus.BAD_REQUEST ).body( null );
         }
         else { return ResponseEntity.ok( p ); }
     }
 
-    @GetMapping("investor/email={email}")
+    /**
+     * Retrieve investor information
+     * @param id
+     * @return Person
+     */
+    @GetMapping("/investor/id={id}")
+    public ResponseEntity<Person> getPersonById(@PathVariable String id) {
+        Person p = userService.findPersonById( Long.valueOf( id ));
+        if (p == null) {
+            return ResponseEntity.status( HttpStatus.BAD_REQUEST ).body( null );
+        }
+        else { return ResponseEntity.ok( p ); }
+    }
+
+    /**
+     * Retrieve investor information
+     * @param email
+     * @return Person
+     */
+    @GetMapping("/investor/email={email}")
     public ResponseEntity<Person> getPersonByEmail(@PathVariable String email) {
-        return ResponseEntity.ok(userService.findPersonByEmail( email ));
+        Person p = userService.findPersonByEmail( email );
+        if (p == null) {
+            return ResponseEntity.status( HttpStatus.BAD_REQUEST ).body( null );
+        }
+        else { return ResponseEntity.ok( p ); }
     }
 
     /**
@@ -84,10 +117,15 @@ public class RestApiController {
             userService.saveNotice( notice );
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body( notice );
         }
-        if (!userService.isValidWithdrawAmount( p, Long.valueOf( withdrawAmount ) )) {
+        else if (!userService.isValidWithdrawAmount( p, Long.valueOf( withdrawAmount ) )) {
             notice.setMessage( "Withdraw amount exceeds 90% of total current balance." );
             userService.saveNotice( notice );
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body( notice );
+        }
+        else if (userService.isAmountOverBalance( p, Long.valueOf( withdrawAmount))) {
+            notice.setMessage( "Withdraw amount exceeds current balance held within product." );
+            userService.saveNotice( notice );
+            return ResponseEntity.status( HttpStatus.FORBIDDEN ).body( notice );
         }
         else{
             notice.setMessage( withdrawAmount + " successfully withdrawn from product." );

@@ -49,11 +49,13 @@ public class UserService {
     }
 
     public Person findPersonByName( String name ){
-        return personDAO.findByName( name );
+        Optional<Person> optionalPerson = personDAO.findByName( name );
+        return optionalPerson.orElse( null );
     }
 
     public Person findPersonByEmail( String email ){
-        return personDAO.findByEmail( email );
+        Optional<Person> optionalPerson = personDAO.findByEmail( email );
+        return optionalPerson.orElse( null );
     }
 
     public Person findPersonById( Long id ) {
@@ -62,12 +64,22 @@ public class UserService {
     }
 
     public boolean isPersonRetired( String email ) {
-        Person person = personDAO.findByEmail( email );
+        Person person = findPersonByEmail( email );
         return person.getAge() >= 65;
     }
 
     public boolean isValidWithdrawAmount( Product product, Long amount ){
         return product.getCurrentBalance()-amount > product.getCurrentBalance()*0.1;
+    }
+
+    /**
+     *
+     * @param product
+     * @param amount
+     * @return true if current available balance is less than withdraw amount
+     */
+    public boolean isAmountOverBalance( Product product, Long amount ) {
+        return product.getCurrentBalance() < amount;
     }
 
     public void doWithdrawAmount( Product product, Long amount ){
