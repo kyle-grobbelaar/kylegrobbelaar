@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * Person Data Access Object - stores in memory every Person Entity
+ * Person Data Access Object - stores in memory every Person Entity.
  */
 @Repository
 public interface PersonDAO extends JpaRepository<Person, Long> {
