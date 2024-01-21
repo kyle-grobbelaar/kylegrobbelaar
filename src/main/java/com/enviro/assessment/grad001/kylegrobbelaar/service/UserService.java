@@ -29,21 +29,46 @@ public class UserService {
     public Product saveProductEntity( Product testEntity) {
         return productDAO.save( testEntity );
     }
+
+    /**
+     * Save a Product
+     * @param notice
+     */
     public void saveNotice( WithdrawalNotice notice ) {
         noticeDAO.save( notice );
     }
 
+    /**
+     * Get all products
+     * @return
+     */
     public List<Product> getAllProducts() {
         return productDAO.findAll();
     }
+
+    /**
+     * Get all products by associated investor name
+     * @param name
+     * @return
+     */
     public List<Product> getAllProductsByName( String name ){
         return productDAO.findAllByName( name );
     }
+
+    /**
+     * Find a single Product by its id
+     * @param id
+     * @return
+     */
     public Product findEntityById ( Long id ){
         Optional<Product> optionalProduct = productDAO.findById( id );
         return optionalProduct.orElse(null);
     }
 
+    /**
+     * Get all investors
+     * @return
+     */
     public List<Person> findAllPersons(){
         return personDAO.findAll();
     }
@@ -63,11 +88,22 @@ public class UserService {
         return optionalPerson.orElse(null);
     }
 
+    /**
+     * Check if a person is able to withdraw from a Retirement Product
+     * @param email
+     * @return
+     */
     public boolean isPersonRetired( String email ) {
         Person person = findPersonByEmail( email );
         return person.getAge() >= 65;
     }
 
+    /**
+     * Confirm if the withdraw amount is less than 90% of the Product current balance
+     * @param product
+     * @param amount
+     * @return
+     */
     public boolean isValidWithdrawAmount( Product product, Long amount ){
         return product.getCurrentBalance()-amount > product.getCurrentBalance()*0.1;
     }
@@ -87,11 +123,9 @@ public class UserService {
         productDAO.save( product );
     }
 
-//    public void saveWithdrawNotice(Product product, WithdrawalNotice notice) {
-////        product.appendNotice( notice );
-//        productDAO.save( product );
-//    }
-
+    /**
+     * This mocks entries into the Product database
+     */
     public void mockDemoProductRepo() {
         Product a = new Product();
         a.setName( "kyle");

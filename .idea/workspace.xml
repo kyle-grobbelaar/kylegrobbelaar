@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6aa9b4b3-48b5-4502-9b86-43aa3a368a3f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/controller/RestApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/controller/RestApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/persistence/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/persistence/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/persistence/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/persistence/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/persistence/WithdrawalNoticeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/persistence/WithdrawalNoticeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/enviro/assessment/grad001/kylegrobbelaar/InvestorApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/enviro/assessment/grad001/kylegrobbelaar/InvestorApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

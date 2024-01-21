@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Product Data Access Object - stores in memory every Product Entity
+ */
 @Repository
 public interface ProductDAO extends JpaRepository<Product, Long> {
 
