@@ -37,7 +37,7 @@ public class RestApiController {
     public ResponseEntity<Product> getProductById (@PathVariable String id) {
         Product product = userService.findEntityById( Long.valueOf( id ) );
         if (product == null){
-            return ResponseEntity.status( HttpStatus.BAD_REQUEST ).body( product );
+            return ResponseEntity.status( HttpStatus.NOT_FOUND ).body( product );
         }
         else{
             return ResponseEntity.ok(userService.findEntityById( Long.valueOf( id ) ));
@@ -62,7 +62,7 @@ public class RestApiController {
     public ResponseEntity<Person> getPersonByName(@PathVariable String name) {
         Person p = userService.findPersonByName( name );
         if (p == null) {
-            return ResponseEntity.status( HttpStatus.BAD_REQUEST ).body( null );
+            return ResponseEntity.status( HttpStatus.NOT_FOUND ).body( null );
         }
         else { return ResponseEntity.ok( p ); }
     }
@@ -76,7 +76,7 @@ public class RestApiController {
     public ResponseEntity<Person> getPersonById(@PathVariable String id) {
         Person p = userService.findPersonById( Long.valueOf( id ));
         if (p == null) {
-            return ResponseEntity.status( HttpStatus.BAD_REQUEST ).body( null );
+            return ResponseEntity.status( HttpStatus.NOT_FOUND ).body( null );
         }
         else { return ResponseEntity.ok( p ); }
     }
@@ -90,7 +90,7 @@ public class RestApiController {
     public ResponseEntity<Person> getPersonByEmail(@PathVariable String email) {
         Person p = userService.findPersonByEmail( email );
         if (p == null) {
-            return ResponseEntity.status( HttpStatus.BAD_REQUEST ).body( null );
+            return ResponseEntity.status( HttpStatus.NOT_FOUND ).body( null );
         }
         else { return ResponseEntity.ok( p ); }
     }

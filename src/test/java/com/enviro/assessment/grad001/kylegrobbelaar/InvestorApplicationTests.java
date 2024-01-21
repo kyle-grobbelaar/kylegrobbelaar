@@ -31,7 +31,7 @@ class InvestorApplicationTests {
 
 	@Test
 	void cannotRetrieveNonExistentProduct() throws Exception {
-		this.mockmvc.perform(get( "/investment/10000" )).andExpect(status().isBadRequest());
+		this.mockmvc.perform(get( "/investment/10000" )).andExpect(status().isNotFound());
 	}
 
 	@Test
@@ -91,18 +91,18 @@ class InvestorApplicationTests {
 	@Test
 	void personDoesNotExistId() throws Exception {
 		this.mockmvc.perform(get( "/investor/id=1000" ))
-				.andExpect( status().isBadRequest() );
+				.andExpect( status().isNotFound() );
 	}
 
 	@Test
 	void personDoesNotExistEmail() throws Exception {
 		this.mockmvc.perform(get( "/investor/email=idontexist@mail.com" ))
-				.andExpect( status().isBadRequest() );
+				.andExpect( status().isNotFound() );
 	}
 
 	@Test
 	void personDoesNotExistname() throws Exception {
 		this.mockmvc.perform(get( "/investor/name=iamnotreal" ))
-				.andExpect( status().isBadRequest() );
+				.andExpect( status().isNotFound() );
 	}
 }
