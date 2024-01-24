@@ -14,7 +14,6 @@ public class Person {
     private String name;
     private String email;
     private String contact;
-    private String address;
 
     private Long age;
 
@@ -50,13 +49,6 @@ public class Person {
         this.contact = contact;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public Long getAge() {
         return age;
@@ -64,6 +56,24 @@ public class Person {
 
     public void setAge(Long age) {
         this.age = age;
+    }
+
+    @Override
+    public boolean equals (Object o) {
+
+        if (this.getClass() != o.getClass()) {
+            return false;
+        }
+        Person p = (Person) o;
+
+        if (!this.getName().equalsIgnoreCase(p.getName())) {
+            return false;
+        } else if (!this.getEmail().equalsIgnoreCase(p.getEmail())) {
+            return false;
+        } else if (!this.getAge().equals(p.getAge())){
+            return false;
+        }
+        return true;
     }
 
 }

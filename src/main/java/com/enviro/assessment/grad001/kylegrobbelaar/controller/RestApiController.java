@@ -18,6 +18,22 @@ public class RestApiController {
     @Autowired
     private UserService userService;
 
+    @PostMapping("/login")
+    public ResponseEntity<String> getLoginInformation ( @RequestParam String name,
+                                                        @RequestParam String email,
+                                                        @RequestParam String contact,
+                                                        @RequestParam String age) {
+        Person person = new Person();
+        person.setName( name );
+        person.setEmail( email );
+        person.setContact( contact );
+        person.setAge( Long.valueOf( age ) );
+
+        userService.savePersonToDAO( person );
+
+        return ResponseEntity.ok( "Logged in!" );
+    }
+
     /**
      * Retireve all products/investments associated with the client
      * @param name

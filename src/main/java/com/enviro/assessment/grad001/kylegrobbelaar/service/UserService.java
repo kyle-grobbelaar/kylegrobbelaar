@@ -26,6 +26,14 @@ public class UserService {
         mockDemoPersonRepo();
     }
 
+    public void savePersonToDAO ( Person person ) {
+        List<Person> personList = personDAO.findAll();
+
+        if (!personList.contains( person )){
+            personDAO.save( person );
+        }
+    }
+
     public Product saveProductEntity( Product testEntity) {
         return productDAO.save( testEntity );
     }
@@ -160,7 +168,6 @@ public class UserService {
         Person a = new Person();
         a.setName( "kyle" );
         a.setEmail( "kyle@mail.com" );
-        a.setAddress("123 road");
         a.setContact("012345456");
         a.setAge(21L);
         personDAO.save( a );
@@ -168,7 +175,6 @@ public class UserService {
         Person b = new Person();
         b.setName( "donny" );
         b.setEmail( "donny@mail.com" );
-        b.setAddress("456 road");
         b.setContact("0143565456");
         b.setAge(35L);
         personDAO.save( b );
@@ -176,7 +182,6 @@ public class UserService {
         Person c = new Person();
         c.setName( "mack" );
         c.setEmail( "mack@mail.com" );
-        c.setAddress("789 road");
         c.setContact("01234567456");
         c.setAge(78L);
         personDAO.save( c );

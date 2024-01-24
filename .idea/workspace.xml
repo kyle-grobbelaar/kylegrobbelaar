@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aa9b4b3-48b5-4502-9b86-43aa3a368a3f" name="Changes" comment="" />
+    <list default="true" id="6aa9b4b3-48b5-4502-9b86-43aa3a368a3f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/controller/RestApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/controller/RestApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/service/UserService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +65,7 @@
       <recent name="com.enviro.assessment.grad001.kylegrobbelaar" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.InvestorApplicationTests">
+  <component name="RunManager" selected="JUnit.kylegrobbelaar in kylegrobbelaar">
     <configuration name="InvestorApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.enviro.assessment.grad001.kylegrobbelaar.InvestorApplication" />
       <module name="kylegrobbelaar" />
@@ -131,9 +136,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.kylegrobbelaar in kylegrobbelaar" />
         <item itemvalue="JUnit.InvestorApplicationTests" />
         <item itemvalue="Application.InvestorApplication" />
-        <item itemvalue="JUnit.kylegrobbelaar in kylegrobbelaar" />
         <item itemvalue="JUnit.InvestorApplicationTests.personDoesNotExistname" />
         <item itemvalue="JUnit.InvestorApplicationTests.personDoesNotExistId" />
       </list>
