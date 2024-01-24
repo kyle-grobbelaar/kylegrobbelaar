@@ -11,6 +11,6 @@ import java.util.Optional;
  */
 @Repository
 public interface PersonDAO extends JpaRepository<Person, Long> {
-    public Optional<Person> findByEmail( String email );
-    public Optional<Person> findByName(String name );
+    Optional<Person> findByEmail( String email );
+    Optional<Person> findByName(String name );
 }

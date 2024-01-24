@@ -96,6 +96,11 @@ class InvestorApplicationTests {
 	}
 
 	@Test
+	void d() throws Exception {
+		this.mockmvc.perform(get( "/1/download" ));
+	}
+
+	@Test
 	void getPersonExistsId() throws Exception {
 		this.mockmvc.perform(get( "/investor/id=1" ))
 				.andExpect( status().isOk() );

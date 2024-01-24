@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -32,6 +33,14 @@ public class RestApiController {
         userService.savePersonToDAO( person );
 
         return ResponseEntity.ok( userService.getAllProductsByEmail(person.getEmail()) );
+    }
+
+    @GetMapping("/{id}/download")
+    public ResponseEntity<String> doDownloadCSV ( @PathVariable String id) {
+
+        userService.doDownloadCsv( Long.valueOf( id ) );
+
+        return ResponseEntity.ok( "Csv file created" );
     }
 
     /**
@@ -127,25 +136,30 @@ public class RestApiController {
         notice.setEmail(p.getEmail() );
         notice.setProductId( p.getId() );
         notice.setProductType( p.getType() );
+        notice.setDateCreated( LocalDate.now() );
 
         if (p.getType() == ProductType.RETIREMENT && !userService.isPersonRetired(p.getEmail())) {
             notice.setMessage( "You must be 65 years or older to withdraw from this product" );
+            notice.setNewBalance( p.getCurrentBalance() );
             userService.saveNotice( notice );
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body( notice );
         }
         else if (!userService.isValidWithdrawAmount( p, Long.valueOf( withdrawAmount ) )) {
             notice.setMessage( "Withdraw amount exceeds 90% of total current balance." );
+            notice.setNewBalance( p.getCurrentBalance() );
             userService.saveNotice( notice );
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body( notice );
         }
         else if (userService.isAmountOverBalance( p, Long.valueOf( withdrawAmount))) {
             notice.setMessage( "Withdraw amount exceeds current balance held within product." );
+            notice.setNewBalance( p.getCurrentBalance() );
             userService.saveNotice( notice );
             return ResponseEntity.status( HttpStatus.FORBIDDEN ).body( notice );
         }
         else{
             notice.setMessage( withdrawAmount + " successfully withdrawn from product." );
             userService.doWithdrawAmount( p, Long.valueOf(withdrawAmount) );
+            notice.setNewBalance( p.getCurrentBalance() );
             userService.saveNotice( notice );
             return ResponseEntity.ok( notice );
         }

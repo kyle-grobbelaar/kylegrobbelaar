@@ -4,9 +4,13 @@ import com.enviro.assessment.grad001.kylegrobbelaar.model.*;
 import com.enviro.assessment.grad001.kylegrobbelaar.persistence.PersonDAO;
 import com.enviro.assessment.grad001.kylegrobbelaar.persistence.ProductDAO;
 import com.enviro.assessment.grad001.kylegrobbelaar.persistence.WithdrawalNoticeDAO;
+import com.opencsv.CSVWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -142,6 +146,41 @@ public class UserService {
     public void doWithdrawAmount( Product product, Long amount ){
         product.setCurrentBalance(product.getCurrentBalance() - amount );
         productDAO.save( product );
+    }
+
+    /**
+     *  Downloads a csv file into the projects filepath
+     * @param productId
+     */
+    public void doDownloadCsv ( Long productId ) {
+        List<WithdrawalNotice> noticeList = noticeDAO.findByproductId( productId );
+
+        File file = new File( productId+".csv" );
+
+        try {
+            FileWriter outputFile = new FileWriter( file );
+            CSVWriter writer = new CSVWriter( outputFile );
+
+            String[] header = {"id", "created", "productId", "type", "newBalance", "message"};
+            writer.writeNext(header);
+
+            for (WithdrawalNotice notice : noticeList) {
+                String[] data = {
+                        notice.getId().toString(),
+                        notice.getDateCreated().toString(),
+                        notice.getProductId().toString(),
+                        notice.getProductType().toString(),
+                        notice.getNewBalance().toString(),
+                        notice.getMessage()
+                };
+                writer.writeNext( data );
+            }
+            writer.close();
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
     }
 
     /**

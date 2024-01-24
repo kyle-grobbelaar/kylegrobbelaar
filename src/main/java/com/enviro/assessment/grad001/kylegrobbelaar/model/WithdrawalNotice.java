@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDate;
+
 /**
  * Special object that stores the withdrawal notice product information,
  * special message related to URI request
@@ -20,6 +22,8 @@ public class WithdrawalNotice {
     private Long productId;
     private ProductType productType;
     private String email;
+    private Long newBalance;
+    private LocalDate dateCreated;
 
     public Long getProductId() {
         return productId;
@@ -59,5 +63,22 @@ public class WithdrawalNotice {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+
+    public Long getNewBalance() {
+        return newBalance;
+    }
+
+    public void setNewBalance(Long newBalance) {
+        this.newBalance = newBalance;
+    }
+
+    public LocalDate getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(LocalDate dateCreated) {
+        this.dateCreated = dateCreated;
     }
 }

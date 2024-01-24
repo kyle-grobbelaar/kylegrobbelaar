@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6aa9b4b3-48b5-4502-9b86-43aa3a368a3f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/controller/RestApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/controller/RestApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/model/WithdrawalNotice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/model/WithdrawalNotice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/persistence/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/persistence/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/persistence/WithdrawalNoticeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/persistence/WithdrawalNoticeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/kylegrobbelaar/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/enviro/assessment/grad001/kylegrobbelaar/InvestorApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/enviro/assessment/grad001/kylegrobbelaar/InvestorApplicationTests.java" afterDir="false" />
     </list>
@@ -65,7 +69,7 @@
       <recent name="com.enviro.assessment.grad001.kylegrobbelaar" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.InvestorApplicationTests.canLogin">
+  <component name="RunManager" selected="JUnit.InvestorApplicationTests">
     <configuration name="InvestorApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.enviro.assessment.grad001.kylegrobbelaar.InvestorApplication" />
       <module name="kylegrobbelaar" />
@@ -136,9 +140,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InvestorApplicationTests" />
         <item itemvalue="JUnit.InvestorApplicationTests.canLogin" />
         <item itemvalue="JUnit.kylegrobbelaar in kylegrobbelaar" />
-        <item itemvalue="JUnit.InvestorApplicationTests" />
         <item itemvalue="Application.InvestorApplication" />
         <item itemvalue="JUnit.InvestorApplicationTests.personDoesNotExistname" />
       </list>
