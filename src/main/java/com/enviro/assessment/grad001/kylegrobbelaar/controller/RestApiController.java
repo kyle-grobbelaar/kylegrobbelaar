@@ -19,7 +19,7 @@ public class RestApiController {
     private UserService userService;
 
     @PostMapping("/login")
-    public ResponseEntity<String> getLoginInformation ( @RequestParam String name,
+    public ResponseEntity<List <Product> > getLoginInformation ( @RequestParam String name,
                                                         @RequestParam String email,
                                                         @RequestParam String contact,
                                                         @RequestParam String age) {
@@ -31,7 +31,7 @@ public class RestApiController {
 
         userService.savePersonToDAO( person );
 
-        return ResponseEntity.ok( "Logged in!" );
+        return ResponseEntity.ok( userService.getAllProductsByEmail(person.getEmail()) );
     }
 
     /**

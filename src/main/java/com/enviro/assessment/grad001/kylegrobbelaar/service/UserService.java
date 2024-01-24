@@ -7,6 +7,8 @@ import com.enviro.assessment.grad001.kylegrobbelaar.persistence.WithdrawalNotice
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,6 +34,8 @@ public class UserService {
         if (!personList.contains( person )){
             personDAO.save( person );
         }
+
+        System.out.println( personDAO.findAll() );
     }
 
     public Product saveProductEntity( Product testEntity) {
@@ -61,6 +65,15 @@ public class UserService {
      */
     public List<Product> getAllProductsByName( String name ){
         return productDAO.findAllByName( name );
+    }
+
+    /**
+     * Get all products by associated investor name
+     * @param email
+     * @return
+     */
+    public List<Product> getAllProductsByEmail( String email ){
+        return productDAO.findAllByEmail( email );
     }
 
     /**

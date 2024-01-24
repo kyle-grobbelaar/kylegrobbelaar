@@ -9,6 +9,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
@@ -18,6 +19,30 @@ class InvestorApplicationTests {
 
 	@Autowired
 	private MockMvc mockmvc;
+
+	@Test
+	void canCreateNewPerson() throws Exception {
+		String formData = "name=brody&email=brody@mail.com&age=34&contact=123456704";
+
+		this.mockmvc.perform( post("/login" )
+				.contentType(MediaType.APPLICATION_FORM_URLENCODED)
+						.content( formData ))
+				.andDo( print() )
+				.andExpect( status().isOk() );
+
+	}
+
+	@Test
+	void canLogin() throws Exception {
+		String formData = "name=kyle&email=kyle@mail.com&age=21&contact=012345456";
+
+		this.mockmvc.perform( post("/login" )
+						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
+						.content( formData ))
+				.andDo( print() )
+				.andExpect( status().isOk() );
+
+	}
 
 	@Test
 	void canRetrieveProducts() throws Exception {
