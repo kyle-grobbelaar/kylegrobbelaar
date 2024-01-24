@@ -161,7 +161,7 @@ public class UserService {
             FileWriter outputFile = new FileWriter( file );
             CSVWriter writer = new CSVWriter( outputFile );
 
-            String[] header = {"id", "created", "productId", "type", "newBalance", "message"};
+            String[] header = {"id", "date", "productId", "type", "newBalance", "message"};
             writer.writeNext(header);
 
             for (WithdrawalNotice notice : noticeList) {
