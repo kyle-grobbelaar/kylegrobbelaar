@@ -28,8 +28,8 @@ public class UserService {
         this.productDAO = productDAO;
         this.personDAO = personDAO;
         this.noticeDAO = noticeDAO;
-        mockDemoProductRepo();
-        mockDemoPersonRepo();
+//        mockDemoProductRepo();
+//        mockDemoPersonRepo();
     }
 
     public void savePersonToDAO ( Person person ) {

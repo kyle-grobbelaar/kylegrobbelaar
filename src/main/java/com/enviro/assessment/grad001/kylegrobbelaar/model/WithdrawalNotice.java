@@ -1,11 +1,9 @@
 package com.enviro.assessment.grad001.kylegrobbelaar.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import org.springframework.beans.factory.annotation.Autowired;
+//import jakarta.persistence.*;
+//import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
@@ -13,6 +11,7 @@ import java.time.LocalDate;
  * special message related to URI request
  */
 @Entity
+@Table( name = "Withdraws" )
 public class WithdrawalNotice {
 
     @Id

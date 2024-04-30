@@ -1,11 +1,11 @@
 package com.enviro.assessment.grad001.kylegrobbelaar.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+//import jakarta.persistence.*;
+
+import javax.persistence.*;
 
 @Entity
+@Table( name = "Persons")
 public class Person {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
