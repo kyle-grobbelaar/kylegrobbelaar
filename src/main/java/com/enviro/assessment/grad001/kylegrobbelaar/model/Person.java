@@ -11,10 +11,14 @@ public class Person {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column( name = "NAME" )
     private String name;
+    @Column( name = "EMAIL" )
     private String email;
+    @Column( name = "CONTACT" )
     private String contact;
 
+    @Column( name = "AGE" )
     private Long age;
 
     public Long getId() {

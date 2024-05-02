@@ -9,4 +9,4 @@ RUN mvn clean install -DskipTests
 
 RUN rm -rf src .idea .gitignore Dockerfile
 
-CMD ["mvn", "spring-boot:run", "-DskipTests"]
+CMD ["mvn", "spring-boot:run"]

@@ -13,9 +13,14 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private ProductType type;
+    @Column( name = "TYPE" )
+    @Enumerated( EnumType.STRING )
+    private ProductType Type;
+    @Column( name = "NAME" )
     private String name;
+    @Column( name = "CURRENT_BALANCE" )
     private Long currentBalance;
+    @Column( name = "EMAIL" )
     private String email;
 //    private List<WithdrawalNotice> notices;
 
@@ -28,11 +33,11 @@ public class Product {
     }
 
     public ProductType getType() {
-        return type;
+        return Type;
     }
 
     public void setType(ProductType type) {
-        this.type = type;
+        this.Type = type;
     }
 
     public String getName() {

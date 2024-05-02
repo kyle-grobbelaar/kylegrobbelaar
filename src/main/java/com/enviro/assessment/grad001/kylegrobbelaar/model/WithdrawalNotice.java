@@ -17,11 +17,19 @@ public class WithdrawalNotice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column( name = "MESSAGE" )
     private String message;
+    @Column( name = "PRODUCT_ID" )
     private Long productId;
-    private ProductType productType;
+    @Column( name = "TYPE" )
+    @Enumerated( EnumType.STRING )
+    private ProductType Type;
+    @Column( name = "EMAIL" )
     private String email;
+    @Column( name = "NEW_BALANCE" )
     private Long newBalance;
+    @Column( name = "DATE_CREATED" )
     private LocalDate dateCreated;
 
     public Long getProductId() {
@@ -33,11 +41,11 @@ public class WithdrawalNotice {
     }
 
     public ProductType getProductType() {
-        return productType;
+        return Type;
     }
 
     public void setProductType(ProductType productType) {
-        this.productType = productType;
+        this.Type = productType;
     }
 
     public String getEmail() {
