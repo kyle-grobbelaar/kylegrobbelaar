@@ -13,18 +13,33 @@ services:
     networks:
       - app-net
 
-  app:
+  gradle-app:
     depends_on:
       - postgres_db
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: gradle-Dockerfile
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db:5432/banker_db
       SPRING_DATASOURCE_USERNAME: owner
       SPRING_DATASOURCE_PASSWORD: localpasswd
     ports:
-      - 8080:8080
+      - 1000:8080
+    networks:
+      - app-net
+
+  maven-app:
+    depends_on:
+      - postgres_db
+    build:
+      context: .
+      dockerfile: maven-Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db:5432/banker_db
+      SPRING_DATASOURCE_USERNAME: owner
+      SPRING_DATASOURCE_PASSWORD: localpasswd
+    ports:
+      - 2000:8080
     networks:
       - app-net
 
