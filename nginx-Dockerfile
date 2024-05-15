@@ -1,0 +1,7 @@
+FROM nginx:perl
+
+COPY etc/nginx/nginx.conf /etc/nginx/nginx.conf
+
+RUN ls
+
+CMD [ "nginx", "-c", "nginx.conf" ]

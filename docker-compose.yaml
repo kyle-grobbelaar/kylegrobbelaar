@@ -1,5 +1,6 @@
 services:
   postgres_db:
+    container_name: postgres_db
     restart: always
     image: postgres:15.4
     ports:
@@ -10,25 +11,26 @@ services:
       POSTGRES_PASSWORD: localpasswd
     volumes:
       - postgres-data:/var/lib/postgresql/data
-    networks:
-      - app-net
+    # networks:
+    #   - app-net
 
-  gradle-app:
-    depends_on:
-      - postgres_db
-    build:
-      context: .
-      dockerfile: gradle-Dockerfile
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db:5432/banker_db
-      SPRING_DATASOURCE_USERNAME: owner
-      SPRING_DATASOURCE_PASSWORD: localpasswd
-    ports:
-      - 1000:8080
-    networks:
-      - app-net
+  # gradle-app:
+  #   depends_on:
+  #     - postgres_db
+  #   build:
+  #     context: .
+  #     dockerfile: gradle-Dockerfile
+  #   environment:
+  #     SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db:5432/banker_db
+  #     SPRING_DATASOURCE_USERNAME: owner
+  #     SPRING_DATASOURCE_PASSWORD: localpasswd
+  #   ports:
+  #     - 1000:8080
+  #   networks:
+  #     - app-net
 
   maven-app:
+    container_name: maven-app
     depends_on:
       - postgres_db
     build:
@@ -40,10 +42,36 @@ services:
       SPRING_DATASOURCE_PASSWORD: localpasswd
     ports:
       - 2000:8080
-    networks:
-      - app-net
+    # networks:
+    #   - app-net
 
-networks:
-  app-net:
+  # nginx-system:
+  #   container_name: nginx-system
+  #   volumes:
+  #     - ./etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+  #   depends_on:
+  #     - maven-app
+  #   build:
+  #     context: .
+  #     dockerfile: nginx-Dockerfile
+  #   ports:
+  #     - 80:80
+  #   networks:
+  #     - app-net
+  nginx-system:
+    image: nginx:1.17.10
+    container_name: nginx-system
+    depends_on:
+      - maven-app
+    volumes:
+      - ./etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    # networks:
+    #   - app-net
+
+# networks:
+#   app-net:
 volumes:
   postgres-data:
+
